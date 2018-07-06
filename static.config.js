@@ -47,6 +47,12 @@ export default {
     ]
   },
   webpack: (config, { defaultLoaders, stage }) => {
+    // console.log('config', config)
+    let { options } = config.plugins[1]
+    // console.log('options', options)
+    // console.log('template', options.template)
+    options.template = __dirname + "/src/index.template.html"
+    // console.log('dirname: ', __dirname)
     let loaders = []
 
     if (stage === 'dev') {
