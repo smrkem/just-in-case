@@ -1,7 +1,8 @@
 import React from 'react'
-import { Router, Link } from 'react-static'
+import { Router } from 'react-static'
 import { hot } from 'react-hot-loader'
 //
+import Header from './containers/Header'
 import Routes from 'react-static-routes'
 
 import './app.scss'
@@ -9,12 +10,8 @@ import './app.scss'
 const App = () => (
   <Router>
     <div>
-      <nav>
-        <Link exact to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-      </nav>
-      <div className="content">
+      <Header />
+      <div className="container main-content">
         <Routes />
       </div>
     </div>

@@ -8,7 +8,7 @@ export default withRouteData((home) => {
   let { featured } = home
   return (
     <div>
-      <HeadMeta />
+      
 
       <section>
         Welcome to Just In Case - my doomsday prepper product review blog.

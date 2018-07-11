@@ -1,4 +1,5 @@
 import { reloadRoutes } from 'react-static/node'
+import HtmlTemplate from './src/containers/HtmlTemplate'
 import jdown from 'jdown'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import chokidar from 'chokidar'
@@ -47,10 +48,6 @@ export default {
     ]
   },
   webpack: (config, { defaultLoaders, stage }) => {
-    // Set template - not working for npm run build??
-    let { options } = config.plugins[1]
-    options.template = __dirname + "/src/index.template.html"
-
     let loaders = []
 
     if (stage === 'dev') {
@@ -101,4 +98,5 @@ export default {
     ]
     return config
   },
+  Document: HtmlTemplate,
 }
