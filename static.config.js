@@ -11,13 +11,14 @@ export default {
     title: 'Just In Case | Doomsday Prepping Made Easy',
   }),
   getRoutes: async () => {
-    const { posts, home, about } = await jdown('content')
+    const { reviews, posts, home, about } = await jdown('content')
     return [
       {
         path: '/',
         component: 'src/containers/Home',
         getData: () => ({
           ...home,
+          reviews,
         }),
       },
       {

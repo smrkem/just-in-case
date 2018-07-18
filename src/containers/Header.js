@@ -4,7 +4,7 @@ import { Link } from 'react-static'
 const Header = (props) => {
   return (
     <header>
-      <div class="container">
+      <div className="container">
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
           <Link className="navbar-brand" to="/">Just In Case</Link>
 

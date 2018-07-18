@@ -5,6 +5,7 @@ import HeadMeta from './HeadMeta'
 
 
 export default withRouteData((home) => {
+  console.log('home', home)
   let { featured } = home
   return (
     <div>
