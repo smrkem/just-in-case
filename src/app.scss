@@ -7,6 +7,8 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
+  color: #fff;
+  background: #353535;
 }
 
 img {
@@ -14,14 +16,39 @@ img {
 }
 
 header {
-  background-color: #343a40;
+  background-image: url('../public/caution-header-ms.png');
+  background-size: auto 180px;
+  height: 180px;
+
+  @media (min-width: 576px) {
+    background-size: auto 220px;
+    height: 220px;
+  }
 
   .navbar-brand {
-    padding: 75px 100px 25px 0;
-    background-image: url('../public/nuclearbomb720.png');
-    background-size: 100px auto;
+    height: 100%;
+    width: 140px;
+    background-image: url('../public/mushroom-cloud-ms.png');
+    background-size: 140px auto;
     background-repeat: no-repeat;
-    background-position: right;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    margin-left: -70px;
+    padding-top: 112px;
+    text-align: center;
+    color: #353535;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @media (min-width: 576px) {
+      background-size: 160px auto;
+      width: 160px;
+      top: 30px;
+      margin-left: -80px;
+      padding-top: 130px;
+      font-size: 1.5rem;
+    }
   }
 
   .nav-link {
@@ -30,6 +57,24 @@ header {
   }
 }
 
-.main-content {
-  margin-top: 2rem;
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+  }
 }
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  padding: 1rem;
+  border-left: 1px solid #666;
+}
+#main-content {
+  margin-top: 2rem;
+  width: 100%;
+}
+

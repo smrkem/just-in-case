@@ -11,40 +11,40 @@ export default {
     title: 'Just In Case | Doomsday Prepping Made Easy',
   }),
   getRoutes: async () => {
-    const { reviews, posts, home, about } = await jdown('content')
+    const { posts } = await jdown('content')
+    const featured = posts.filter(post => post.featured)
     return [
       {
         path: '/',
         component: 'src/containers/Home',
         getData: () => ({
-          ...home,
-          reviews,
+          posts,
+          featured
         }),
       },
       {
-        path: '/about',
-        component: 'src/containers/About',
-        getData: () => ({
-          about,
-        }),
-      },
-      {
-        path: '/blog',
-        component: 'src/containers/Blog',
+        path: '/posts',
+        component: 'src/containers/PostsList',
         getData: () => ({
           posts,
+          featured
         }),
         children: posts.map(post => ({
-          path: `/post/${post.slug}`,
+          path: `/${post.slug}`,
           component: 'src/containers/Post',
           getData: () => ({
             post,
+            featured
           }),
         })),
       },
       {
         is404: true,
-        component: 'src/containers/404',
+        component: 'src/containers/PostsList',
+        getData: () => ({
+          posts,
+          featured
+        })
       },
     ]
   },

@@ -1,21 +1,16 @@
 import React from 'react'
 import { withRouteData } from 'react-static'
 import convert from 'htmr'
-import HeadMeta from './HeadMeta'
 
 
-export default withRouteData((home) => {
-  console.log('home', home)
-  let { featured } = home
+export default withRouteData(({posts}) => {
+  console.log('posts', posts)
   return (
-    <div>
+    <div id="main-content">
       
 
       <section>
         Welcome to Just In Case - my doomsday prepper product review blog.
-      </section>
-      <section>
-        {convert(featured.contents)}
       </section>
     </div>
   )

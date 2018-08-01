@@ -4,7 +4,7 @@ import convert from 'htmr'
 import HeadMeta from './HeadMeta'
 
 export default withRouteData(({ post }) => (
-  <div>
+  <div id="main-content">
     <HeadMeta title={post.title} />
     <Link to="/blog/">{'<'} Back</Link>
     <br />
