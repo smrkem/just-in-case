@@ -78,3 +78,45 @@ header {
   width: 100%;
 }
 
+.home .hero {
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background: #363636;
+  margin-bottom: 1rem;
+
+  h1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1::after {
+    content: "";
+    height: 120px;
+    width: 100%;
+    display: block;
+    background-image: url('../public/brick-white.png');
+    background-size: 140px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: 576px) {
+      height: 0;
+      background-image: none;
+    }
+  }
+
+  @media (min-width: 576px) {
+    h1 {
+      height: 100px;
+      padding-left: 160px;
+      background-image: url('../public/brick-white.png');
+      background-repeat: no-repeat;
+      background-size: 140px 100px;
+      margin-bottom: 1rem;
+    }
+  }
+
+}

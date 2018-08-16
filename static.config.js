@@ -12,14 +12,13 @@ export default {
   }),
   getRoutes: async () => {
     const { posts } = await jdown('content')
-    const featured = posts.filter(post => post.featured)
+
     return [
       {
         path: '/',
         component: 'src/containers/Home',
         getData: () => ({
-          posts,
-          featured
+          noSidebar: true
         }),
       },
       {
@@ -27,14 +26,12 @@ export default {
         component: 'src/containers/PostsList',
         getData: () => ({
           posts,
-          featured
         }),
         children: posts.map(post => ({
           path: `/${post.slug}`,
           component: 'src/containers/Post',
           getData: () => ({
             post,
-            featured
           }),
         })),
       },
@@ -43,7 +40,6 @@ export default {
         component: 'src/containers/PostsList',
         getData: () => ({
           posts,
-          featured
         })
       },
     ]
